@@ -1,0 +1,41 @@
+    1  ping google.com
+    2  ip addr 
+    3  exit
+    4  hostname
+    5  hostname -f 
+    6  ip addr 
+    7  cat /proc/cpuinfo 
+    8  free -m 
+    9  git clone    https://github.com/amitvashisttech/docker-K8s-SG-16-Aug-2021.git
+   10  cd 
+   11  ls
+   12  cd docker-K8s-SG-16-Aug-2021/
+   13  ls
+   14  git pull 
+   15  ls
+   16  cd 01-Docker/
+   17  ls
+   18  cd 00-Setup/
+   19  ls
+   20  vim install-docker.sh 
+   21  ./install-docker.sh 
+   22  docker version 
+   23  ls
+   24  cd ..
+   25  ls
+   26  echo "============================= Demo 2 =================================="
+   27  docker version 
+   28  systemctl status docker 
+   29  docker images 
+   30  docker container ls 
+   31  docker run ubuntu echo "Welcome to the world of docker.!"
+   32  docker images 
+   33  docker container ls 
+   34  docker container ls -a
+   35  docker run ubuntu echo "Welcome to the world of docker.!"
+   36  docker container ls -a
+   37  docker run ubuntu echo "Hello World.!"
+   38  docker container ls -a
+   39  ls
+   40  mkdir 01-Docker-Commands
+   41  history > 01-Docker-Commands/Day1-History.txt
