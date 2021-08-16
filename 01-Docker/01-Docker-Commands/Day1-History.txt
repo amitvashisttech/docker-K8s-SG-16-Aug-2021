@@ -39,3 +39,12 @@
    39  ls
    40  mkdir 01-Docker-Commands
    41  history > 01-Docker-Commands/Day1-History.txt
+
+
+   26  echo "============================= Demo 3 =================================="
+   55  docker pull amitvashist7/python-web-app
+   56  docker images
+   57  docker pull amitvashist7/apache-ex4
+   58  docker login
+   59  docker pull amitvashist7/apache-ex4
+   60  docker images
