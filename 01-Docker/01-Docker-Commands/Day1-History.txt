@@ -56,3 +56,66 @@
    77  docker run ubuntu cat /etc/os-release
    78  docker run ubuntu:16.04 cat /etc/os-release
    79  docker images
+
+
+
+
+ 48  echo "========================== Demo 4 =================================="
+   49  docker ps
+   50  docker ps -a
+   51  docker kill 864f535bf200
+   52  docker rm 864f535bf200
+   53  docker ps -a
+   54  docker ps -aq
+   55  docker rm $(docker ps -aq)
+   56  docker ps
+   57  docker ps -a
+   58  docker images
+   59  docker rmi amitvashist7/python-web-app:latest
+   60  docker images
+   61  docker images -q
+   62  docker rmi $(docker images -q)
+   63  ls
+   64  docker ps -a
+   65  docker images
+   66  docker run ubuntu echo "Hey Ununtu"
+   67  docker ps
+   68  docker ps -a
+   69  docker run -it ubuntu
+   70  docker ps
+   71  docker ps -a
+   72  docker start 1ec36b7b09eb
+   73  docker ps -a
+   74  docker attach 1ec36b7b09eb
+   75  docker start 1ec36b7b09eb
+   76  docker attach 1ec36b7b09eb
+   77  docker ps
+   78  docker attach 1ec36b7b09eb
+   79  ls
+   80  docker ps
+   81  docker kill  1ec36b7b09eb
+   82  docker ps
+   83  docker ps -a
+   84  docker run -it ubuntu
+   85  docker run -itd ubuntu
+   86  docker ps
+   87  docker attach 47d9ae0f4672
+   88  docker ps
+   89  docker ps -q
+   90  docker ps -qa
+   91  docker ps -qa | wc -l
+   92  docker ps -q | wc -l
+   93  docker kill $(docker ps -q)
+   94  ls
+   95  docker run -itd --name AppA-cont-1 ubuntu
+   96  docker run -itd --name AppA-cont-2 ubuntu
+   97  docker run -itd --name AppB-cont-2 ubuntu
+   98  docker run -itd --name AppB-cont-1 ubuntu
+   99  docker ps
+  100  docker inspect AppB-cont-2
+  101  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' AppB-cont-2
+  102  docker ps -q
+  103  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  104  ls
+  105  cd docker-K8s-SG-16-Aug-2021/
+  106  ls
