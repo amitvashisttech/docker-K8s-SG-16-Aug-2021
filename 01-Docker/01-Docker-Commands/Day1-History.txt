@@ -48,3 +48,11 @@
    58  docker login
    59  docker pull amitvashist7/apache-ex4
    60  docker images
+
+
+ 74  docker logout
+   75  ls
+   76  docker images
+   77  docker run ubuntu cat /etc/os-release
+   78  docker run ubuntu:16.04 cat /etc/os-release
+   79  docker images
