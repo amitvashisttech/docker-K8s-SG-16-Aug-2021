@@ -11,4 +11,4 @@ RUN apt-get update
 RUN apt-get install apache2 -y 
 
 # Run Apache Server 
-CMD  
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"] 
