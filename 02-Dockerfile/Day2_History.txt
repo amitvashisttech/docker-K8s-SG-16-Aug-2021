@@ -1,0 +1,132 @@
+    1  ping google.com
+    2  ip addr 
+    3  exit
+    4  docker version 
+    5  ls
+    6  cd docker-K8s-SG-16-Aug-2021/s
+    7  cd docker-K8s-SG-16-Aug-2021/
+    8  ls
+    9  cd 01-Docker/
+   10  ls
+   11  cd 00-Setup/
+   12  ls
+   13  cat install-docker.sh 
+   14  ls
+   15  cd ..
+   16  ls
+   17  cd 01-Docker-Commands/
+   18  ls
+   19  cat Day1-History.txt 
+   20  cd 
+   21  docker images 
+   22  docker kill $(docker ps -qa )
+   23  docker rm $(docker ps -qa )
+   24  docker rmi $(docker images -q )
+   25  ls
+   26  docker ps 
+   27  docker ps -a
+   28  docker images 
+   29  docker run ubuntu echo "Welcome to Docker Demo.!"
+   30  docker images 
+   31  docker ps 
+   32  docker ps -a
+   33  docker run ubuntu echo "Welcome to Docker Demo.....!"
+   34  docker ps 
+   35  docker ps -a
+   36  cat /etc/os-release 
+   37  docker images 
+   38  docker run ubuntu  cat /etc/os-release
+   39  docker run ubuntu:16.04  cat /etc/os-release
+   40  docker run centos:7  cat /etc/os-release
+   41  docker pull  amitvashist7/python-web-app
+   42  docker images 
+   43  docker pull  amitvashist7/apache-ex4
+   44  docker login
+   45  docker pull  amitvashist7/apache-ex4
+   46  docker images 
+   47  docker logout 
+   48  echo "========================== Demo 4 =================================="
+   49  docker ps 
+   50  docker ps -a
+   51  docker kill 864f535bf200
+   52  docker rm 864f535bf200
+   53  docker ps -a
+   54  docker ps -aq
+   55  docker rm $(docker ps -aq)
+   56  docker ps 
+   57  docker ps -a
+   58  docker images 
+   59  docker rmi amitvashist7/python-web-app:latest
+   60  docker images 
+   61  docker images -q
+   62  docker rmi $(docker images -q)
+   63  ls
+   64  docker ps -a 
+   65  docker images 
+   66  docker run ubuntu echo "Hey Ununtu"
+   67  docker ps 
+   68  docker ps -a 
+   69  docker run -it ubuntu 
+   70  docker ps 
+   71  docker ps -a
+   72  docker start 1ec36b7b09eb
+   73  docker ps -a
+   74  docker attach 1ec36b7b09eb
+   75  docker start 1ec36b7b09eb
+   76  docker attach 1ec36b7b09eb
+   77  docker ps 
+   78  docker attach 1ec36b7b09eb
+   79  ls
+   80  docker ps 
+   81  docker kill  1ec36b7b09eb
+   82  docker ps 
+   83  docker ps -a
+   84  docker run -it ubuntu 
+   85  docker run -itd ubuntu 
+   86  docker ps 
+   87  docker attach 47d9ae0f4672
+   88  docker ps 
+   89  docker ps -q
+   90  docker ps -qa
+   91  docker ps -qa | wc -l 
+   92  docker ps -q | wc -l 
+   93  docker kill $(docker ps -q) 
+   94  ls
+   95  docker run -itd --name AppA-cont-1 ubuntu 
+   96  docker run -itd --name AppA-cont-2 ubuntu 
+   97  docker run -itd --name AppB-cont-2 ubuntu 
+   98  docker run -itd --name AppB-cont-1 ubuntu 
+   99  docker ps 
+  100  docker inspect AppB-cont-2
+  101  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' AppB-cont-2
+  102  docker ps -q
+  103  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  104  ls
+  105  cd docker-K8s-SG-16-Aug-2021/
+  106  ls
+  107  history 
+  108  ls
+  109  vim 02-Dockerfile/apache/v1/Dockerfile 
+  110  ls
+  111  git add . ; git commit -m "Docker Image"; git push 
+  112  git pull 
+  113  ls
+  114  cat 02-Dockerfile/apache/v1/Dockerfile 
+  115  docker build -t myapache . 
+  116  ls
+  117  cd 02-Dockerfile/apache/v1/
+  118  ls
+  119  docker build -t myapache . 
+  120  docker images 
+  121  docker run -d --name test-apache-v1 myapache
+  122  docker ps 
+  123  docker inspect test-apache-v1
+  124  curl "172.17.0.7"
+  125  ls
+  126  cd ..
+  127  ls
+  128  cd ..
+  129  ls
+  130  cd ..
+  131  ls
+  132  history > 02-Dockerfile/Day2_History.txt
