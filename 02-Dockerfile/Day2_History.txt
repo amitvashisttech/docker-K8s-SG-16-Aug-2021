@@ -130,3 +130,23 @@
   130  cd ..
   131  ls
   132  history > 02-Dockerfile/Day2_History.txt
+    1  echo "============================ Demo 5 ==============================="
+    2  docker images 
+    3  docker run -it --name test-apache ubuntu:16.04
+    4  docker ps 
+    5  docker inspect test-apache
+    6  curl "172.17.0.6"
+    7  ls
+    8  git pull
+    9  ls
+   10  mkdir 02-Dockerfile/apache/v1 -p 
+   11  cd 02-Dockerfile/apache/v1/
+   12  ls
+   13  vim Dockerfile
+   14  ls
+   15  cd ..
+   16  ls
+   17  cd ..
+   18  ls
+   19  history 
+   20  history >> Day2_History.txt 
