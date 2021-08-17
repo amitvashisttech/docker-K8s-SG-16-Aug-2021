@@ -293,3 +293,162 @@
    74  cd ..
    75  ls
    76  history >> Day2_History.txt 
+    1  docker ps -a
+    2  ip addr 
+    3  docker network ls 
+    4  docker network inspect 8d2b5adc48b4
+    5  docker images 
+    6  docker run -d --name test-nw-1 amitvashist7/mypython-web-app:v2 
+    7  docker ps 
+    8  docker inspect test-nw-1
+    9  docker network inspect 8d2b5adc48b4
+   10  docker run -d --name test-nw-2 amitvashist7/mypython-web-app:v2 
+   11  docker run -d --name test-nw-3 amitvashist7/mypython-web-app:v2 
+   12  docker run -d --name test-nw-4 amitvashist7/mypython-web-app:v2 
+   13  docker run -d --name test-nw-5 amitvashist7/mypython-web-app:v2 
+   14  docker ps 
+   15  docker network inspect 8d2b5adc48b4
+   16  docker network inspect ls 
+   17  docker network ls 
+   18  docker network inspect bridge
+   19  docker ps 
+   20  docker stop test-nw-3
+   21  docker network inspect bridge
+   22  docker sp 
+   23  docker ps 
+   24  docker ps -a
+   25  docker run -d --name test-nw-6 amitvashist7/mypython-web-app:v2 
+   26  docker run -d --name test-nw-7 amitvashist7/mypython-web-app:v2 
+   27  docker ps 
+   28  docker network inspect bridge
+   29  docker start test-nw-3
+   30  docker ps 
+   31  docker network inspect bridge
+   32  docker ps 
+   33  curl 172.17.0.8:8081/info
+   34  ip addr 
+   35  curl localhost:8081
+   36  curl 172.31.0.100:8081
+   37  netstat -tulnp 
+   38  docker run -d --name test-nw-8 -p 8090:8081 amitvashist7/mypython-web-app:v2 
+   39  docker ps 
+   40  netstat -tulnp 
+   41  systemctl status docker
+   42  curl localhost:8081
+   43  curl localhost:8090
+   44  curl localhost:8090/info
+   45  curl 172.31.0.100:8090/info
+   46  docker run -d --name test-nw-9 -p 8090:8081 amitvashist7/mypython-web-app:v2 
+   47* docker run -d --name test-nw-15 - amitvashist7/mypython-web-app:v2 
+   48  docker ps 
+   49  docker run -d --name test-nw-15 -P amitvashist7/mypython-web-app:v2 
+   50  docker run -d --name test-nw-16 -P amitvashist7/mypython-web-app:v2 
+   51  docker ps 
+   52  docker inspect test-nw-16
+   53  systemctl status docker
+   54  ls
+   55  cd 02-Dockerfile/
+   56  ls
+   57  cd python-web-app/
+   58  ls
+   59  cd v2/
+   60  ls
+   61  cd ..
+   62  ls
+   63  cp -rf v2 v3
+   64  cd v3/
+   65  ls
+   66  vim Dockerfile 
+   67  docker images 
+   68  docker build -t amitvashist7/mypython-web-app:v3 . 
+   69  dockerimages 
+   70  docker images 
+   71  docker run -d --name test-nw-17 -P amitvashist7/mypython-web-app:v3 
+   72  docker ps 
+   73  ls
+   74  cd ..
+   75  ls
+   76  history >> Day2_History.txt
+
+
+ 
+   81  git add . ; git commit -m "Network" ; git push 
+   82  docker ps 
+   83  docker kill $(docker ps -q) 
+   84  docker rm $(docker ps -q) 
+   85  docker rm $(docker ps -qa) 
+   86  docker ps 
+   87  docker ps -q 
+   88  docker ps -a
+   89  docker network ls 
+   90  docker network create --help
+   91  docker network create --driver bridge --subnet 172.28.0.0/16 --ip-range 172.28.5.0/24 --gateway 172.28.5.254 mybr0 
+   92  docker network ls 
+   93  docker network ls mybr0
+   94  docker network inspect  mybr0
+   95  ip addr 
+   96  docker run -d --name test-nw-20 -P amitvashist7/mypython-web-app:v3 
+   97  docker run -d --name test-nw-21 --network "mybr0" -P amitvashist7/mypython-web-app:v3 
+   98  docker run -d --name test-nw-23 --network "mybr0" -P amitvashist7/mypython-web-app:v3 
+   99  docker run -d --name test-nw-22 --network "mybr0" -P amitvashist7/mypython-web-app:v3 
+  100  docker ps 
+  101  docker inspect test-nw-20 
+  102  docker inspect test-nw-21
+  103  docker inspect test-nw-22
+  104  docker inspect test-nw-23
+  105  curl 172.28.5.1:8081
+  106  curl 172.28.5.1:8081/info
+  107  docker ps 
+  108  docker images 
+  109  docker inspect 4410f1ab83d8
+  110  history 
+  111  docker network inspect mybr0
+  112  curl 172.28.5.0:8081/info
+  113  docker network ls 
+  114  docker kill $(docker ps -qa ) 
+  115  docker rm $(docker ps -qa ) 
+  116  docker network rm mybr0
+  117  docker network ls
+  118  docker run -d --name test-nw-30 --network host -P amitvashist7/mypython-web-app:v3 
+  119  docker os 
+  120  docker ps 
+  121  netstat -tulnp 
+  122  docker inspect test-nw-30
+  123  docker network ls 
+  124  docker network inspect  host
+  125  docker run -d --name test-nw-40 --network none -P amitvashist7/mypython-web-app:v3 
+  126  docker ps 
+  127  docker inspect test-nw-40
+  128  docker network ls 
+  129* docker network inspect no
+  130  docker ps 
+  131  docker exec -it test-nw-40 ip addr
+  132  docker exec -it test-nw-40 ifconfig 
+  133  docker exec -it test-nw-40 bash 
+  134  docker run -it --name test-nw-41 --network none -P ubuntu:16.04
+  135  docker ps 
+  136  docker images 
+  137  docker run -it bad-sol-apache 
+  138  docker run -it bad-sol-apache:v2
+  139  docker ps 
+  140  docker commit -p -m "network test" 643a2081d7c6 bad-sol-apache:v3 
+  141  docker ps 
+  142  docker images 
+  143  docker run -itd --name test-nw-45 --network none -P bad-sol-apache:v3
+  144  docker ps 
+  145  docker exec -it test-nw-45 ip addr 
+  146  docker exec -it 643a2081d7c6 ip addr 
+  147  docker kill test-nw-40 test-nw-30
+  148  docker run -itd --name test-nw-50 --network host -P bad-sol-apache:v3
+  149  docker ps 
+  150  docker exec -it 643a2081d7c6 ip addr 
+  151  docker exec -it test-nw-45 ip addr 
+  152  docker exec -it test-nw-50 ip addr 
+  153  ls
+  154  cd 01-Docker/
+  155  ls
+  156  cd ..
+  157  ls
+  158  cd 02-Dockerfile/
+  159  ls
+  160  history >> Day2_History.txt 
