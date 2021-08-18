@@ -1,0 +1,7 @@
+``` 
+
+  133  kubectl cluster-info
+  134  kubectl api-versions
+  135  kubectl api-resources
+  136  kubectl proxy --address='172.31.0.10' --port=8001 --accept-hosts='.' --accept-paths='.' &
+  
