@@ -11,6 +11,8 @@ spec:
       labels:
         app: docker-get-started
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - name: docker-get-started
         image: amitvashist7/k8s-tiny-web

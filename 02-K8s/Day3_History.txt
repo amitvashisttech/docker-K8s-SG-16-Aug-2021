@@ -1,0 +1,143 @@
+    1  ls
+    2  git clone https://github.com/amitvashisttech/docker-K8s-SG-16-Aug-2021.git
+    3  ls
+    4  cd docker-K8s-SG-16-Aug-2021/
+    5  ls
+    6  cd 02-K8s/00-Setup/
+    7  ls
+    8  vim install-k8s-master-node.sh 
+    9  ls
+   10  ./install-k8s-master-node.sh 
+   11  kubectl get nodes
+   12  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   13  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   14  kubectl get nodes
+   15  kubectl get nodes -w
+   16  kubectl get nodes
+   17  history 
+   18  kubectl get nodes 
+   19  ls
+   20  ll
+   21  docker login 
+   22  kubectl create secret generic regcred --from-file=.dockerconfigjson=/root/.docker/config.json --type=kubernetes.io/dockerconfigjson
+   23  ls
+   24  cat install-k8s-master-node.sh 
+   25  wget https://docs.projectcalico.org/manifests/calico.yaml 
+   26  ls
+   27  vim calico.yaml 
+   28  ls
+   29  history 
+   30  vim Regcred.txt
+   31  ls
+   32  cd ..
+   33  l
+   34  cd ..
+   35  ls
+   36  git add . ; git commit -m "RegCred" ; git push 
+   37  git pull 
+   38  git add . ; git commit -m "RegCred" ; git push 
+   39  ls
+   40  cat 02-K8s/00-Setup/Regcred.txt 
+   41  ls
+   42  cd 02-K8s/
+   43  ls
+   44  cd 01-First-App/
+   45  ls
+   46  cd ..
+   47  ls
+   48  cd 00-Setup/
+   49  ls
+   50  vim Regcred.txt 
+   51  ls
+   52  cd ..
+   53  ls
+   54  git config --global credential.helper 'cache --timeout=360000'
+   55  git add . ; git commit -m "RegCred" ; git push 
+   56  ls
+   57  vim 02-K8s/00-Setup/Regcred.txt 
+   58  ls
+   59  git add . ; git commit -m "RegCred" ; git push 
+   60  ls
+   61  cd 02-K8s/
+   62  ls
+   63  cd 01-First-App/
+   64  ls
+   65  cat README.md 
+   66  kubectl get nodes
+   67  kubectl run hello-k8s --image=nginx --port=80
+   68  kubectl get pods 
+   69  kubectl delete pod hello-k8s
+   70  kubectl run hello-k8s --image=nginx --port=80 --dry-run -o yaml
+   71  kubectl run hello-k8s --image=nginx --port=80 --dry-run -o yaml > hello-k8s.yaml
+   72  kubectl get secrets
+   73  cat ../00-Setup/Regcred.txt 
+   74  ls
+   75  vim README.md 
+   76  ls
+   77  vim hello-k8s.yaml 
+   78  ls
+   79  kubectl apply -f hello-k8s.yaml 
+   80  kubectl get pods 
+   81  kubectl describe pod hello-k8s
+   82  kubectl get pods 
+   83  kubectl get pods -o wide 
+   84  cat README.md 
+   85  ls
+   86  cp -rf hello-k8s.yaml my-python-webapp.yaml
+   87  ls
+   88  vim my-python-webapp.yaml 
+   89  ls
+   90  kubectl apply -f my-python-webapp.yaml 
+   91  kubectl get pods -o wide 
+   92  vim README.md 
+   93  ls
+   94  cd ..
+   95  ls
+   96  cd ..
+   97  ls
+   98  git add . ; git commit -m "01-First-App" ; git push 
+   99  ls
+  100  kubectl get pods 
+  101  kubectl delete -f 02-K8s/01-First-App/
+  102  ls
+  103  git pull 
+  104  ls
+  105  kubectl apply -f 02-K8s/01-First-App/
+  106  kubectl get pods 
+  107  kubectl get pods -o wide 
+  108  ls
+  109  kubectl get pods -n kube-system
+  110  kubectl get pods -n kube-system -o wide 
+  111  kubectl exec -it etcd-master  -- /bin/sh
+  112  kubectl exec -it etcd-master  -n kube-system -- /bin/sh
+  113  kubectl cluster-info
+  114  kubectl cluster-info dump
+  115  ls
+  116  git pull
+  117  cd 02-K8s/
+  118  ls
+  119  cd 04-Replication-Cantroller/
+  120  ls
+  121  cat helloworld-rc.yaml 
+  122  cat ../../02-K8s/01-First-App/hello-k8s.yaml 
+  123  ls
+  124  vim helloworld-rc.yaml 
+  125  ls
+  126  kubectl apply -f helloworld-rc.yaml 
+  127  kubectl get pods 
+  128  kubectl get rc 
+  129  kubectl delete pod helloworld-controller-7fr9x
+  130  kubectl delete pod hello-k8s 
+  131  kubectl scale --replicas=1 rc helloworld-controller
+  132  kubectl delete pod helloworld-controller-vtgpt
+  133  kubectl delete pod helloworld-controller-g77dg
+  134  kubectl scale --replicas=10 rc helloworld-controller
+  135  kubectl scale --replicas=2 rc helloworld-controller
+  136  kubectl delete -f helloworld-rc.yaml 
+  137  ls
+  138  cd ..
+  139  ls
+  140  cd ..
+  141  ls
+  142  history 
+  143  history  > 02-K8s/Day3_History.txt
