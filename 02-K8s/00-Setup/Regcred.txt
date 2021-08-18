@@ -1,2 +1,3 @@
- 21  docker login
+   21  docker login
    22  kubectl create secret generic regcred --from-file=.dockerconfigjson=/root/.docker/config.json --type=kubernetes.io/dockerconfigjson -n kube-system
+   23  kubectl apply -f calico.yaml -n kube-system
