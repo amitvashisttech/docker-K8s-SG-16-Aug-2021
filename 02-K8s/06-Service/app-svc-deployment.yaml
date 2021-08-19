@@ -29,9 +29,11 @@ spec:
       labels:
         app: python-webapp
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - name: k8s-demo
-        image: amitvashist7/mypywebapp:v3
+        image: amitvashist7/mypython-web-app:v3
         imagePullPolicy: IfNotPresent
         ports:
         - name: myapp-port
