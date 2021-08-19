@@ -5,7 +5,7 @@ metadata:
   labels:
     app: helloworld-2
 spec:
-  replicas: 10
+  replicas: 15
   strategy:
     rollingUpdate:
       maxSurge: 3
@@ -19,6 +19,8 @@ spec:
       labels:
         app: helloworld-2
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - name: k8s-demo
         image: amitvashist7/k8s-tiny-web

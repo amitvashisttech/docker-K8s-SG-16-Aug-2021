@@ -16,6 +16,8 @@ spec:
       labels:
         app: helloworld-3
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - name: k8s-demo
         image: amitvashist7/k8s-tiny-web
