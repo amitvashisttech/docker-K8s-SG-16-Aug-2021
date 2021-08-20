@@ -1,0 +1,9 @@
+```
+ 611  cd 15-DaemonSet/
+  612  ls
+  613  vim helloworld.yaml
+  614  kubectl apply -f helloworld.yaml
+  615  kubectl get daemonset
+  616  kubectl get pods -o wide
+  617  kubectl get nodes
+```
