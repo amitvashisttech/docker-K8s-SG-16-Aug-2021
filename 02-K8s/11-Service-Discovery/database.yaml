@@ -5,6 +5,8 @@ metadata:
   labels:
     app: database
 spec:
+  imagePullSecrets:
+  - name: regcred
   containers:
   - name: mysql
     image: mysql:5.7
