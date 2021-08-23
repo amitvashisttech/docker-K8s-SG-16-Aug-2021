@@ -5,7 +5,7 @@
 replicaCount: 3
 
 image:
-  repository: amitvashist7/mypywebapp
+  repository: amitvashist7/mypython-web-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v3"
@@ -38,7 +38,7 @@ securityContext: {}
 
 service:
   type: NodePort
-  port: 80
+  port: 8081
 
 ingress:
   enabled: false
