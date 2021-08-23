@@ -5,12 +5,12 @@
 replicaCount: 3
 
 image:
-  repository: nginx
+  repository: amitvashist7/k8s-tiny-web
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "2"
 
-imagePullSecrets: []
+#imagePullSecrets:  "regcred"
 nameOverride: ""
 fullnameOverride: ""
 
